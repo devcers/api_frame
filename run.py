@@ -6,6 +6,8 @@
 @Email   : devcer@163.com
 @Description : 
 """
+import pytest
 
 if __name__ == '__main__':
+
     pytest.main()
