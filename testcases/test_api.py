@@ -18,3 +18,4 @@ class TestApi:
 
     def test_order(self):
         print("测试订单")
+        raise Exception("测试异常")
