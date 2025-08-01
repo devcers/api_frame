@@ -7,6 +7,9 @@
 @Description : 
 """
 import allure
+import pytest
+
+from commons.yaml_util import read_yaml
 
 
 @allure.epic("项目名称:昭阳的开发项目")
@@ -24,5 +27,6 @@ class TestApi:
             with open("","rb") as f:
                 allure.attach(f.read(),name="输入用户名截图",attachment_type=allure.attachment_type.PNG)
 
+    @pytest.mark.parametrize("caseinfo",read_yaml('./testcases/test_api.yaml'))
     def test_order(self):
         print("测试订单")
