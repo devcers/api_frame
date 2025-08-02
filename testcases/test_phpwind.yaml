@@ -1,0 +1,13 @@
+-
+  feature: 论坛模块
+  story: 论坛首页接口
+  title: 验证论坛首页内容正常返回
+  request:
+    method: get
+    url: http://47.107.116.139/phpwind/
+#    headers: 请求头
+#    params: 请求参数
+    data:
+  validate:
+
+csrf_token: 0150d5839b0f6924

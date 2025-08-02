@@ -1,0 +1,17 @@
+-
+  feature: 获取公众号token
+  story: 获取token接口
+  title: 验证token接口成功返回
+  request:
+    method: get
+    url: https://api.weixin.qq.com/cgi-bin/token
+#    headers: 请求头
+#    params: 请求参数
+    data:
+      grant_type:
+      appid:
+      secret:
+    headers:
+      Accept: "application/json, text/javascript, /; q=0.01"
+      X-Requested-With: XMLHttpRequest
+  validate:
