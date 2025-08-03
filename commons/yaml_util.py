@@ -14,8 +14,14 @@ def read_yaml(path):
          value = yaml.load(f,Loader=yaml.SafeLoader)
          return value
 
-def write_yaml(path,value):
-    with open(path,"a+",encoding='utf-8') as f:
+
+def read_all():
+    with open("extract.yaml", "r", encoding='utf-8') as f:
+        value = yaml.load(f, Loader=yaml.SafeLoader)
+        return value
+
+def write_yaml(value):
+    with open("extract.yaml","a+",encoding='utf-8') as f:
         yaml.safe_dump(value,f,allow_unicode=True)
 
 def clean_yaml(path):

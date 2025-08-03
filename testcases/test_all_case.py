@@ -10,7 +10,8 @@ from pathlib import Path
 
 import pytest
 
-from commons.model_util import CaseInfo
+from commons.extract_util import ExtractUtil
+from commons.model_util import CaseInfo, verify_yaml
 from commons.request_util import RequestUtil
 from commons.yaml_util import read_yaml
 
@@ -18,13 +19,21 @@ from commons.yaml_util import read_yaml
 class TestAllCase:
     pass
 
+eu = ExtractUtil()
+
 def create_testcase(yaml_path):
 
     @pytest.mark.parametrize("caseinfo",read_yaml(yaml_path))
     def fun(self,caseinfo):
-        new_caseinfo = CaseInfo(caseinfo)
+        new_caseinfo = verify_yaml(caseinfo)
         print(new_caseinfo)
-        RequestUtil().send_all_request(** new_caseinfo.request)
+        new_request = eu.use_extract_value(new_caseinfo.request)
+
+        responses = RequestUtil().send_all_request(**new_request)
+        if new_caseinfo.extract:
+            print(new_caseinfo.extract)
+            for key,value in new_caseinfo.extract.items():
+                eu.extract(responses,key,*value)
 
     return fun
 

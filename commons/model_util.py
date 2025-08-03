@@ -19,6 +19,7 @@ class CaseInfo:
     vaildate: dict
 
     # 选填
+    extract: dict = None
 
 def verify_yaml(case_info :dict):
     try:

@@ -14,7 +14,7 @@ class RequestUtil:
 
     session = Session()
 
-    def send_all_request(self, **kwargs):
+    def send_all_request(self, **kwargs: object):
         # 处理公共参数
         total_params = {
 
