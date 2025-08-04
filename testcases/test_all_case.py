@@ -22,8 +22,16 @@ def create_testcase(path):
 
     @pytest.mark.parametrize("case_info",read_yaml(path))
     def fun(self,case_info):
-        # 校验yaml中的数据
-        case_obj = verify_yaml(case_info)
+        global case_obj
+        if isinstance(case_info,list):
+            for case in case_info:
+                # 校验yaml中的数据
+                case_obj = verify_yaml(case_info)
+                stand_case_flow(case_obj)
+        else:
+            # 校验yaml中的数据
+            case_obj = verify_yaml(case_info)
+            stand_case_flow(case_obj)
         allure.dynamic.feature(case_obj.feature)
         allure.dynamic.story(case_obj.story)
         allure.dynamic.title(case_obj.title)

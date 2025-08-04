@@ -6,7 +6,7 @@
     method: get
     url: https://api.weixin.qq.com/cgi-bin/token
     # headers: 请求头
-    # params: 请求参数
+    params: 请求参数
     data:
       grant_type: ssfs
       appid: 43523423432

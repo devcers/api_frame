@@ -19,6 +19,7 @@ class CaseInfo:
     # 选填
     extract: dict = None
     validate: dict = None
+    parameters: list = None
 
 def verify_yaml(case_info :dict):
     try:
