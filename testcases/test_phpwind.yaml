@@ -9,5 +9,7 @@
 #    params: 请求参数
     data:
   validate:
-
-csrf_token: 0150d5839b0f6924
+    equals:
+      断言状态码为200: [200, status_code]
+    contains:
+      断言包含access_token: [access_token,text]

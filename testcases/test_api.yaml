@@ -7,4 +7,3 @@
     url: http://www.baidu.com
     headers: 请求头
     params: 请求参数
-  validate: null

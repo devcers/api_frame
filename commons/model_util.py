@@ -16,10 +16,9 @@ class CaseInfo:
     story: str
     title: str
     request: dict
-    vaildate: dict
-
     # 选填
     extract: dict = None
+    validate: dict = None
 
 def verify_yaml(case_info :dict):
     try:

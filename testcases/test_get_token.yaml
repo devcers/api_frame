@@ -5,13 +5,13 @@
   request:
     method: get
     url: https://api.weixin.qq.com/cgi-bin/token
-#    headers: 请求头
-#    params: 请求参数
+    # headers: 请求头
+    # params: 请求参数
     data:
-      grant_type:
-      appid:
-      secret:
+      grant_type: ssfs
+      appid: 43523423432
+      secret: dfsdfsdfsdfsdfsdfsfdsfdf
     headers:
       Accept: "application/json, text/javascript, /; q=0.01"
       X-Requested-With: XMLHttpRequest
-  validate:
+
