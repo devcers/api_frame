@@ -6,10 +6,12 @@ request_util.py
 创建日期: 2025/8/2
 描述: 
 """
+import logging
+
 from pip._internal.network import session
 from requests import Session
 
-
+logger = logging.getLogger(__name__)
 class RequestUtil:
 
     session = Session()
@@ -27,5 +29,5 @@ class RequestUtil:
                 for file_key,file_value in value.items():
                     value[file_key] = open(file_value, 'rb')
         res = RequestUtil.session.request(**kwargs)
-
+        logger.info(res.text)
         return res
